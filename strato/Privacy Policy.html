@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de" data-language="ger" data-theme="poppins">
     <head>
-        <!-- BUILD: ce37975362590e1246d03764da9ecfc6104c7bd2 -->
+        <!-- BUILD: 13aa7363e8439c73985a2c5dfd2a66a9d918361c -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1">
         <title></title>
@@ -12,8 +12,8 @@
         
         
             
-            <link rel="stylesheet" href="/_assets/main.763ca28d.css"></link>
-            <link rel="modulepreload" href="/_assets/langConfig.f50ef9c0.js"></link>
+            <link rel="stylesheet" href="/_assets/main.c9a580cf.css"></link>
+            <link rel="modulepreload" href="/_assets/setCookie.2e7644a3.js"></link>
         
         
         
@@ -6743,5 +6743,48 @@
             </script>
             <script id="oaotag" type="text/javascript" src="https://frontend-services.ionos.com/t/tag/STRATO/shop.js" async="async" defer="defer"></script>
         
+        
+        
+    <!--COMPONENT sales_agent_dashboard.sales_agent_dashboard-->
+
+<div class="sales-agent-dashboard position-fixed bottom-0 start-0 end-0 d-flex align-items-center justify-content-between gap-4 ps-4 py-2" data-component="sales-agent-dashboard" hidden>
+    <div class="sales-agent-dashboard__header d-flex align-items-center gap-3">
+        <span class="sales-agent-dashboard__title fw-semibold">Sales Agent Mode</span>
+        <div class="sales-agent-dashboard__toggle">
+            <button
+                class="sales-agent-dashboard__toggle-btn btn p-1 d-flex align-items-center gap-2"
+                type="button"
+                role="switch"
+                aria-checked="false">
+                <span class="sales-agent-dashboard__toggle-track">
+                    <span class="sales-agent-dashboard__toggle-thumb"></span>
+                </span>
+                <span class="sales-agent-dashboard__toggle-label small">Off</span>
+            </button>
+        </div>
+    </div>
+    <div class="sales-agent-dashboard__info d-flex gap-4">
+        <p class="d-flex align-items-center gap-2 mb-0">
+            <span class="sales-agent-dashboard__label">Reference ID:</span>
+            <input
+                type="text"
+                class="sales-agent-dashboard__ref-input form-control form-control-sm font-monospace"
+                placeholder="Enter your Reference ID"
+            />
+        </p>
+    </div>
+    <div class="sales-agent-dashboard__result d-flex align-items-center gap-2 flex-grow-1" hidden>
+        <p class="mb-0 text-nowrap">
+            <span class="sales-agent-dashboard__label">Generated Link:</span>
+        </p>
+        <input
+            type="text"
+            class="sales-agent-dashboard__link-input form-control form-control-sm font-monospace flex-grow-1"
+            placeholder="Paste the generated URL path here (e.g., /buy/ger/basket/addshortname/...)"
+        />
+        <button type="button" class="sales-agent-dashboard__copy-btn btn btn-sm fw-semibold">Copy</button>
+    </div>
+</div>
+<!--END sales_agent_dashboard.sales_agent_dashboard-->
     </body>
 </html>
