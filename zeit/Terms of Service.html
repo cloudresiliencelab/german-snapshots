@@ -28,8 +28,9 @@
 
     <link rel="stylesheet" href="https://static.zeit.de/p/zeit.web/css/web.site/content/content.9ea8750e7729da80b1520c2ae7747729.css">
     
-    <link rel="stylesheet" href="https://static.zeit.de/p/zeit.web/css/web.site/content/article.00540ca6ace5239325f7ca787364231e.css">
-<link rel="stylesheet" href="https://static.zeit.de/p/zeit.web/css/web.site/base/print.f972aa13c1e028b963afb9f6a5ee0ea4.css" media="print">
+    <link rel="stylesheet" href="https://static.zeit.de/p/zeit.web/css/web.site/content/article.257b4f92b1d1fd76f3ee17b1806bdaf5.css">
+<link rel="stylesheet" href="https://static.zeit.de/p/zeit.web/css/web.core/standalone/components/audioplayer.463dc4604813168a3a2caccfbd35ed89.css">
+    <link rel="stylesheet" href="https://static.zeit.de/p/zeit.web/css/web.site/base/print.64c8d70cf1e1a4fe2321ecae21dddb61.css" media="print">
         
     <meta name="robots" content="index,follow,noarchive,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
@@ -985,7 +986,7 @@
     <span itemprop="name">Most Wanted Start 2026</span>
 </a>                    </li>
                                 <li>
-                        <a href="https://www.zeit.de/campus/angebote/tbh-by-bcg-folge-fuenf/index" class="navigation-link" itemprop="url">
+                        <a href="https://www.zeit.de/campus/angebote/tbh-by-bcg-folge-sechs/index" class="navigation-link" itemprop="url">
     <span itemprop="name">TBH by BCG: Einblicke ins Consulting</span>
 </a>                    </li>
                                 <li>
@@ -1435,10 +1436,10 @@
         
     <!-- popover -->
     
-    <script src="https://static.zeit.de/p/zeit.web/js/mausabhaengigeszaehlinstrument.7fc70802b05fa668ecbb.js" async></script>
+    <script src="https://static.zeit.de/p/zeit.web/js/mausabhaengigeszaehlinstrument.0963aa4e6ab59eeca1bd.js" async></script>
     <script src="https://static.zeit.de/p/zeit.web/js/images.135545ef10ca39165dd7.js" async></script>
     <script src="https://static.zeit.de/p/zeit.web/js/pictures.607403ed607340a3df8c.js" async></script>
-    <script src="https://static.zeit.de/p/zeit.web/js/site.91818ebb28f6d68357ea.js" defer></script>
+    <script src="https://static.zeit.de/p/zeit.web/js/site.f3ff68f845529a21ad75.js" defer></script>
 
     <script>
     if ( 'serviceWorker' in window.navigator ) {
@@ -1473,7 +1474,30 @@
         });
     };</script>
 
-            <div class="navigation-backdrop" hidden></div>
+    <template id="audio-player-controls">
+    <div class="audio-player__controls" hidden>
+        <button class="audio-player__button" aria-label="Wiedergabe">    <svg class="svg-symbol audio-player__icon audio-player__icon--play" aria-hidden="true">
+        <use xlink:href="#svg-play" />
+    </svg>    <svg class="svg-symbol audio-player__icon audio-player__icon--pause" aria-hidden="true">
+        <use xlink:href="#svg-pause" />
+    </svg>    <svg class="svg-symbol audio-player__icon audio-player__icon--replay z-icon-stroke" aria-hidden="true">
+        <use xlink:href="#svg-reload" />
+    </svg><span class="audio-player__duration"></span>
+        </button>
+        <div class="audio-player__progress">
+            <span class="audio-player__progress-bar"></span>
+        </div>
+        <span class="audio-player__timestamp" data-format="short"></span>
+        <select name="audio-player__playbackrate" class="audio-player__playbackrate" aria-label="Wiedergabegeschwindigkeit anpassen">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option selected value="1">1.0x</option>
+            <option value="1.25">1.25x</option>
+            <option value="1.5">1.5x</option>
+            <option value="2">2.0x</option>
+        </select>
+    </div>
+</template>        <div class="navigation-backdrop" hidden></div>
     
 </body>
 </html>
