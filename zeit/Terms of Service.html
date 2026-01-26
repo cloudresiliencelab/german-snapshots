@@ -1445,9 +1445,14 @@
 
     <script>
     if ( 'serviceWorker' in window.navigator ) {
-        window.addEventListener( 'load', function() {
-            window.navigator.serviceWorker.register( '/serviceworker.js');
-        });
+        window.navigator.serviceWorker.getRegistrations().then(
+            function( registrations ) {
+                for ( var i = 0; i < registrations.length; i++ ) {
+                    registrations[i].unregister();
+                    console.debug( 'ServiceWorker: unregistered', registrations[i] );
+                }
+            }
+        );
     }
 </script>
     
