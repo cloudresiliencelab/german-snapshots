@@ -967,14 +967,6 @@
     <span itemprop="name">Most Wanted Start 2026</span>
 </a>                    </li>
                                 <li>
-                        <a href="https://www.zeit.de/campus/angebote/tbh-by-bcg-folge-sechs/index" class="navigation-link" itemprop="url">
-    <span itemprop="name">TBH by BCG: Einblicke ins Consulting</span>
-</a>                    </li>
-                                <li>
-                        <a href="https://www.zeit.de/angebote/most-responsible-employer-2026/index" class="navigation-link" itemprop="url">
-    <span itemprop="name">Verantwortungsvollste Arbeitgeber 2026</span>
-</a>                    </li>
-                                <li>
                         <a href="https://www.zeit.de/angebote/forschungskosmos/index" class="navigation-link" itemprop="url">
     <span itemprop="name">ZEIT Forschungskosmos</span>
 </a>                    </li>
@@ -1416,21 +1408,16 @@
         
     <!-- popover -->
     
-    <script src="https://static.zeit.de/p/zeit.web/js/mausabhaengigeszaehlinstrument.1a4f372dc994d00ed4bc.js" async></script>
+    <script src="https://static.zeit.de/p/zeit.web/js/mausabhaengigeszaehlinstrument.92095d8bcc89400e4bba.js" async></script>
     <script src="https://static.zeit.de/p/zeit.web/js/images.9295407e45175695a235.js" async></script>
     <script src="https://static.zeit.de/p/zeit.web/js/pictures.beb1fc96ec8917972543.js" async></script>
-    <script src="https://static.zeit.de/p/zeit.web/js/site.890f456e65ba3f3553cd.js" defer></script>
+    <script src="https://static.zeit.de/p/zeit.web/js/site.75ac2d5629e3e346397f.js" defer></script>
 
     <script>
     if ( 'serviceWorker' in window.navigator ) {
-        window.navigator.serviceWorker.getRegistrations().then(
-            function( registrations ) {
-                for ( var i = 0; i < registrations.length; i++ ) {
-                    registrations[i].unregister();
-                    console.debug( 'ServiceWorker: unregistered', registrations[i] );
-                }
-            }
-        );
+        window.addEventListener( 'load', function() {
+            window.navigator.serviceWorker.register( '/serviceworker.js');
+        });
     }
 </script>
     
