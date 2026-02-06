@@ -18,7 +18,7 @@
     <link rel="preload" href="https://static.zeit.de/p/zeit.web/fonts/tabletgothic/TabletGothic-Bold-2024.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="https://static.zeit.de/p/zeit.web/fonts/franziska/FranziskaWebPro.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="https://static.zeit.de/p/zeit.web/css/web.core/normalize.b9eab7af6a39b9cf8a6d40fdc727387a.css">
-    <link rel="stylesheet" href="https://static.zeit.de/p/zeit.web/css/web.site/base/base.3eb91d480f5e4c7488b22b2c38e9573c.css">
+    <link rel="stylesheet" href="https://static.zeit.de/p/zeit.web/css/web.site/base/base.adc3032505b3eba60ea10fad6d3a292c.css">
     <link rel="stylesheet" href="https://static.zeit.de/p/zeit.web/css/web.core/standalone/navigation/navigation.1d68548c2b42a4417bf61cc940b769c4.css">
     <link rel="stylesheet" href="https://static.zeit.de/p/zeit.web/css/web.core/standalone/footer.06095cffebb1464f43daaec5d39ced00.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://static.zeit.de/p/zeit.web/css/web.core/standalone/footer.06095cffebb1464f43daaec5d39ced00.css"></noscript>
@@ -125,7 +125,7 @@
                 "summy": true,
                 "semantic_search_hide_generated_answer": false,
                 "rebrush_carousel": false,
-                "article_elements_load_tracking": false
+                "article_elements_load_tracking": true
     },
             "settings": {
                 "autoplay_carousel_item_duration": "",
@@ -1409,7 +1409,7 @@
     <script src="https://static.zeit.de/p/zeit.web/js/mausabhaengigeszaehlinstrument.24ca37b30365bfaacc83.js" async></script>
     <script src="https://static.zeit.de/p/zeit.web/js/images.9295407e45175695a235.js" async></script>
     <script src="https://static.zeit.de/p/zeit.web/js/pictures.4519dc50f95ebb1f6af6.js" async></script>
-    <script src="https://static.zeit.de/p/zeit.web/js/site.c5646818733fd9ee504f.js" defer></script>
+    <script src="https://static.zeit.de/p/zeit.web/js/site.ce671b85ec43e09893f0.js" defer></script>
 
     <script>
     if ( 'serviceWorker' in window.navigator ) {
@@ -1437,6 +1437,7 @@
                         productId: "zede",
                         ssoUrl: "https://meine.zeit.de",
                         ssoApiUrl: "https://meine.zeit.de/api/1",
+                        userId: window.Zeit.user?.ssoid || window.Zeit.cookieRead('creid'),
                     },
                     tracking,
                 }
