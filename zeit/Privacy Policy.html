@@ -23,55 +23,6 @@
         </style>
 
 
-                <script>
-                     document.addEventListener("DOMContentLoaded", function () {
-    // loads sourcepoint consent tools
-    window._sp_ = {
-      config: {
-        accountId: 692,
-        baseEndpoint: "https://consent-cdn.zeit.de"
-      }
-    };
-    const script = document.createElement('script');
-    script.src =
-      "https://consent-cdn.zeit.de/wrapperMessagingWithoutDetection.js";
-    document.body.appendChild(script);
-
-    // generates consent button
-    const consentButton = document.getElementById("consentbutton");
-    if ((document.cookie.indexOf('consentUUID') === -1)) {
-      consentButton.innerHTML = "<button title='Zustimmung erteilen' aria-label='Zustimmung erteilen' style='padding: 10px 15px; margin: 0px 10px 10px 0px; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 5px; border-style: solid; font-size: 15px; font-weight: 700; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; width: 241px; background: rgb(24, 126, 67); cursor: pointer;'>Zustimmung erteilen</button>"
-      document.getElementById("consentbutton").onclick = function () { window.location.href = "https://www.zeit.de"; };
-    } else {
-      consentButton.innerHTML = "<button title='Zustimmung widerrufen' aria-label='Zustimmung widerrufen' style='padding: 10px 15px; margin: 0px 10px 10px 0px; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 5px; border-style: solid; font-size: 15px; font-weight: 700; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; width: 241px; background: rgb(186, 18, 10); cursor: pointer;'>Zustimmung widerrufen</button>"
-      document.getElementById("consentbutton").onclick = function () { rejectConsent() };
-      // function to send rejection info to app
-      window.zappiPostMessage = function (event) {
-        if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.pageHandler) {
-          // iOS
-          window.webkit.messageHandlers.pageHandler.postMessage(event);
-        } else if (window.appInterface && window.appInterface.handlePageEvent) {
-          // Andoid
-          window.appInterface.handlePageEvent(JSON.stringify(event));
-        }
-      }
-      //function that executes postRejectAll command
-      function rejectConsent() {
-        __tcfapi('postRejectAll', 2, function (postRejectAllResponse, success) {
-          window.zappiPostMessage({
-            type: 'useractioncomplete',
-            consent: null,
-          });
-          document.cookie = "consentUUID=; expires = Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=zeit.de;";
-          document.cookie = "zonconsent=; expires = Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=zeit.de;";
-          console.log("postRejectAllResponse: ", postRejectAllResponse);
-          console.log('postRejectAllResponse was successful: ' + success)
-          window.location.reload();
-        });
-      }
-    }
-  });
-                </script>
 
     </head>
     <body class="zon">
@@ -89,7 +40,7 @@
                 <div class="declaration-menu-container">
                     <div id="sticky_menu" class="sticky-menu">
                         <div class="sticky-menu-logo ">
-                                <img src="//images.ctfassets.net/9q531vlek15f/6OXqIfs6YWBNFf1a2GBR0S/35165f6b3f755a008cf814a01dc502ee/logo_zeit.svg" alt="Logo zeit.de">
+                                <img src="//images.ctfassets.net/9q531vlek15f/6OXqIfs6YWBNFf1a2GBR0S/35165f6b3f755a008cf814a01dc502ee/logo_zeit.svg" alt="Logo ZEIT Verlag">
                         </div>
                        <button class="hamburger nav-arrow"
                             aria-haspopup="true"
@@ -177,11 +128,11 @@
                         <div class="declaration-intro-description-section" >
                             <div class="declaration-intro-description-header">
                                 <div class="declaration-intro-logo ">
-                                    <img src="//images.ctfassets.net/9q531vlek15f/6OXqIfs6YWBNFf1a2GBR0S/35165f6b3f755a008cf814a01dc502ee/logo_zeit.svg" alt="Logo zeit.de">
+                                    <img src="//images.ctfassets.net/9q531vlek15f/6OXqIfs6YWBNFf1a2GBR0S/35165f6b3f755a008cf814a01dc502ee/logo_zeit.svg" alt="Logo ZEIT Verlag">
                                 </div>
                                 <h1 class="declaration-intro-title" id="datenschutzerklaerung">Datenschutzerklärung</h1>
                                 <div class="declaration-intro-date">
-                                    01.03.2026
+                                    20.04.2026
                                 </div>
                             </div>
                             <div class="declaration-intro-description-body">
@@ -195,7 +146,7 @@
                     <p>Bei Fragen zu Ihrem Abo, Kündigungen und bei einem Widerruf wenden Sie sich bitte ausschließlich an unseren <a href="https://abo.zeit.de/" title="Kundenservice DIE ZEIT">Kundenservice</a>.</p>
                     
                                 </div>
-                                        <a href="/zon/1.5/zon.pdf" class="declaration-intro-pdf-link" target="_blank">als PDF speichern</a>
+                                        <a href="/zon/1.6/zon.pdf" class="declaration-intro-pdf-link" target="_blank">als PDF speichern</a>
                             </div>
                     
                     
@@ -232,7 +183,7 @@
                                 
                                 
                                     <div class="declaration-chapter-p" id="p-" data-collapsible="false" >
-                                      <div><p>Um Ihre Privacy Einstellungen zu ändern, klicken Sie bitte auf den Button.</p>
+                                      <div><p>So ändern Sie Ihre Privacy-Einstellungen: klicken Sie auf &quot;Zustimmung widerrufen&quot; oder löschen Sie die Cookies in Ihrem Browser. Beim nächsten Aufruf von zeit.de erscheint dann wieder das Consent-Banner, in dem Sie zwischen dem Zugang mit Werbetracking und dem kostenpflichtigen zeit.de werbefrei-Abo wählen können.</p>
                                     </div>
                                         
                                     </div>
@@ -248,13 +199,6 @@
                                                         Toggle Zustimmung/Widerspruch
                                                 </a>
                                             </div>
-                                    
-                                    <div class="declaration-chapter-p" id="p-" data-collapsible="false" >
-                                      <div><p>Betätigen Sie den Button &quot;Zustimmung widerrufen&quot; oder löschen Sie Ihre Cookies im Browser, so erscheint beim nächsten Aufruf von zeit.de wieder die vorgeschaltete Seite, auf der Sie zwischen dem Zugang mit Werbetracking und dem kostenpflichtigen zeit.de werbefrei-Abo wählen können.</p>
-                                    </div>
-                                        
-                                    </div>
-                                    
                                     
                             </div>
                         
@@ -546,6 +490,20 @@
                                     </div>
                                         
                                                                 <a href="#Kontakt-zwischen-Nutzern" class="back-to-anchor">To the top of the section</a>
+                                    </div>
+                                    
+                                    
+                                                <h3  role="button" aria-label="Kapitel öffnen" tabindex="0" aria-controls="p-zeit_single-sign-on-account"id="ZEIT-Single-Sign-On-Account"class="declaration-chapter-h">
+                                                    ZEIT Single-Sign-On-Account
+                                                </h3>
+                                    <div class="declaration-chapter-p" id="p-ZEIT-Single-Sign-On-Account" data-collapsible="true"  
+                                      role="region" aria-labelledby="ZEIT-Single-Sign-On-Account">
+                                      <div><p>Es gibt Dienste, für die Sie einen sogenannten Single-Sign-On-Account benötigen. Erforderlich sind eine E-Mail-Adresse sowie ein selbst gewähltes Passwort. Mit diesem Account haben Sie die Möglichkeit, auf verschiedene Angebote zuzugreifen.</p>
+                                    <p>Die Datenverarbeitung im Rahmen des entstehenden Nutzungsverhältnisses ist gesetzlich erlaubt (Art. 6 Abs. 1 b) DSGVO). Die Bereitstellung der abgefragten Daten ist für die Registrierung erforderlich.</p>
+                                    <p>Ihre Daten werden für die Dauer des Bestehens Ihres Accounts gespeichert.</p>
+                                    </div>
+                                        
+                                                                <a href="#ZEIT-Single-Sign-On-Account" class="back-to-anchor">To the top of the section</a>
                                     </div>
                                     
                                     
@@ -861,7 +819,7 @@
                                     <div class="declaration-chapter-p" id="p-Allgemeine-Infrastruktur-und-Kommunikation" data-collapsible="true"  
                                       role="region" aria-labelledby="Allgemeine-Infrastruktur-und-Kommunikation">
                                       <div><p>Die Unternehmen der ZEIT Verlagsgruppe nutzen eine gemeinsame Infrastruktur und kommunizieren über zentral verwaltete Geräte. Die Zeitverlag Gerd Bucerius GmbH &amp; Co. KG stellt dabei die wesentlichen Telekommunikationsdienste und Applikationen zur Verfügung und ist zusammen mit den anderen Unternehmen gemeinsam verantwortlich für die stattfindende Datenverarbeitung. </p>
-                                    <p><strong>Gemeinsam verantwortliche Unternehmen:</strong> Zeitverlag Gerd Bucerius GmbH &amp; Co. KG, ZEIT DIGITAL GmbH, ZEIT Akademie GmbH, Studio ZX GmbH, ZEIT Sprachen GmbH, academics GmbH, ZEIT Online GmbH, ZEIT Weltkunst Verlag GmbH</p>
+                                    <p><strong>Gemeinsam verantwortliche Unternehmen:</strong> Zeitverlag Gerd Bucerius GmbH &amp; Co. KG, ZEIT Akademie GmbH, Studio ZX GmbH, ZEIT Sprachen GmbH, academics GmbH, ZEIT Weltkunst Verlag GmbH</p>
                                     </div>
                                         
                                                                 <a href="#Allgemeine-Infrastruktur-und-Kommunikation" class="back-to-anchor">To the top of the section</a>
@@ -876,25 +834,10 @@
                                       <div><p>Zur Analyse, Kontrolle und Optimierung von Werbemaßnahmen verarbeiten wir personenbezogene Daten in einem von den Produktivsystemen getrennten Data Warehouse. Hier werden die Informationen pseudonymisiert und für spezielle Fragestellungen, zur Gruppen-Profilbildung sowie zur Erstellung von Engagement und Propensity Scores genutzt.</p>
                                     <p>Sofern wir für die Erhebung der Daten eine Einwilligung eingeholt haben, erfolgt auch die Weiterverarbeitung auf dieser Basis (Art. 6 Abs. a) DSGVO). Ansonsten erfolgt die Auswertung und interne Bereitstellung der pseudonymisierten Daten zur Wahrung unserer berechtigten Unternehmensinteressen (Art. 6 Abs. 1 f) DSGVO). Um wirtschaftlich sinnvolle Entscheidungen treffen und wettbewerbsfähig bleiben zu können, müssen wir die Anforderungen unserer Kunden kennen, Veränderungen erkennen und darauf reagieren können. </p>
                                     <p>Die Dauer der pseudonymisierten Speicherung im Data Warehouse richtet sich nach der Speicherdauer in unseren anderen Systemen (z.B. Newsletter-Datenbank, Veranstaltungsdatenbank). Wenn die Daten dort gelöscht werden können, sind sie nicht mehr über das Data Warehouse abrufbar.</p>
-                                    <p><strong>Gemeinsam verantwortliche Unternehmen:</strong> Zeitverlag Gerd Bucerius GmbH &amp; Co. KG, ZEIT Online GmbH, ZEIT Sprachen GmbH, academics GmbH, Studio ZX GmbH, ZEIT Akademie GmbH</p>
+                                    <p><strong>Gemeinsam verantwortliche Unternehmen:</strong> Zeitverlag Gerd Bucerius GmbH &amp; Co. KG, ZEIT Sprachen GmbH, academics GmbH, Studio ZX GmbH, ZEIT Akademie GmbH</p>
                                     </div>
                                         
                                                                 <a href="#Data-Warehouse" class="back-to-anchor">To the top of the section</a>
-                                    </div>
-                                    
-                                    
-                                                <h3  role="button" aria-label="Kapitel öffnen" tabindex="0" aria-controls="p-jc_zeit_single-sign-on-account"id="ZEIT-Single-Sign-On-Account"class="declaration-chapter-h">
-                                                    ZEIT Single-Sign-On-Account
-                                                </h3>
-                                    <div class="declaration-chapter-p" id="p-ZEIT-Single-Sign-On-Account" data-collapsible="true"  
-                                      role="region" aria-labelledby="ZEIT-Single-Sign-On-Account">
-                                      <div><p>Es gibt Dienste, für die Sie einen sogenannten Single-Sign-On-Account benötigen. Erforderlich sind eine E-Mail-Adresse sowie ein selbst gewähltes Passwort. Mit diesem Account haben Sie die Möglichkeit, auf verschiedene Angebote zuzugreifen.</p>
-                                    <p>Die Datenverarbeitung im Rahmen des entstehenden Nutzungsverhältnisses ist gesetzlich erlaubt (Art. 6 Abs. 1 b) DSGVO). Die Bereitstellung der abgefragten Daten ist für die Registrierung erforderlich.</p>
-                                    <p>Ihre Daten werden für die Dauer des Bestehens Ihres Accounts gespeichert.</p>
-                                    <p><strong>Gemeinsam verantwortliche Unternehmen:</strong> Zeitverlag Gerd Bucerius GmbH &amp; Co. KG, ZEIT Online GmbH</p>
-                                    </div>
-                                        
-                                                                <a href="#ZEIT-Single-Sign-On-Account" class="back-to-anchor">To the top of the section</a>
                                     </div>
                                     
                                     
@@ -906,7 +849,7 @@
                                       <div><p>Zur Bearbeitung von Fragen und Reklamationen sowie zur Erbringung unseres Urlaubs- und Umzugsservice werden die personenbezogenen Daten von Abonnenten den zuständigen Mitarbeitern in einem zentralen System bereitgestellt. Wir nutzen Ihre Daten zur Kommunikation mit Ihnen sowie zur Einrichtung der von Ihnen gewünschten Serviceleistungen.</p>
                                     <p>Die Verarbeitung erfolgt im Rahmen eines Vertragsverhältnisses und ist daher gesetzlich gestattet (Art. 6 Abs. 1 b) DSGVO). Die Bereitstellung Ihrer Daten ist erforderlich, damit wir unsere Leistungen erbringen können. </p>
                                     <p>Die Speicherung Ihrer personenbezogenen Daten richtet sich bei einem bestehenden oder früheren Abo nach den gesetzlich vorgeschriebenen Aufbewahrungszeiträumen zur Einhaltung von steuer- und handelsrechtlichen Pflichten. Die bei der Kundenbetreuung und Inanspruchnahme unserer Services anfallenden Daten unterliegen derselben Speicherdauer.</p>
-                                    <p><strong>Gemeinsam verantwortliche Unternehmen:</strong> Zeitverlag Gerd Bucerius GmbH &amp; Co. KG, ZEIT Online GmbH, ZEIT Akademie GmbH</p>
+                                    <p><strong>Gemeinsam verantwortliche Unternehmen:</strong> Zeitverlag Gerd Bucerius GmbH &amp; Co. KG, ZEIT Akademie GmbH</p>
                                     </div>
                                         
                                                                 <a href="#Kundenbetreuung-und-Servicecenter" class="back-to-anchor">To the top of the section</a>
@@ -921,7 +864,7 @@
                                       <div><p>Wir verarbeiten die personenbezogenen Daten unserer Abonnenten zur Anbahnung und Erfüllung von Abo-Verträgen sowie zur Durchführung verschiedener Marketingmaßnahmen. Dabei werden neben Personenstammdaten auch Angaben zu bezogenen Leistungen und zurückliegenden Vertragsverhältnisse verarbeitet. Bei unseren Marketingmaßnahmen berücksichtigen wir, was die Adressaten interessieren könnte und unterbreiten passende Angebote.</p>
                                     <p>Die Verarbeitung im Rahmen der Abo-Verwaltung erfolgt zur Abwicklung eines Vertragsverhältnisses und ist daher gesetzlich gestattet (Art. 6 Abs. 1 b) DSGVO). Die Bereitstellung Ihrer Daten ist erforderlich, damit wir unsere Leistungen erbringen können. Marketingmaßnahmen stützen wir entweder auf unser berechtigtes Unternehmensinteresse (Art. 6 Abs. 1 f) DSGVO), die UWG-Ausnahme (§ 7 Abs. 3 UWG) oder eine von Ihnen erteilte Einwilligung (Art. 6 Abs. 1 a) DSGVO).</p>
                                     <p>Die zur Verwaltung Ihres Abos gespeicherten Daten unterliegen verschiedenen gesetzlichen Aufbewahrungspflichten. Wir speichern alle Vertragsdaten für einen Zeitraum von mindestens 8 Jahren. Bei einem Widerspruch zur werblichen Nutzung werden die Daten eingeschränkt verarbeitet und mit einer Werbesperre versehen.</p>
-                                    <p><strong>Gemeinsam verantwortliche Unternehmen:</strong> Zeitverlag Gerd Bucerius GmbH &amp; Co. KG, ZEIT Online GmbH, ZEIT Akademie GmbH</p>
+                                    <p><strong>Gemeinsam verantwortliche Unternehmen:</strong> Zeitverlag Gerd Bucerius GmbH &amp; Co. KG, ZEIT Akademie GmbH</p>
                                     </div>
                                         
                                                                 <a href="#Abo-Verwaltung-und-Marketing" class="back-to-anchor">To the top of the section</a>
@@ -993,7 +936,7 @@
                                     </div>
                                     
                                     
-                                                <h3  role="button" aria-label="Kapitel öffnen" tabindex="0" aria-controls="p-iq_digital_media_marketing_gmbh"id="iq-digital-media-marketing-GmbH"class="declaration-chapter-h">
+                                                <h3  role="button" aria-label="Kapitel öffnen" tabindex="0" aria-controls="p-jc_iq_digital_media_marketing_gmbh"id="iq-digital-media-marketing-GmbH"class="declaration-chapter-h">
                                                     iq digital media marketing GmbH
                                                 </h3>
                                     <div class="declaration-chapter-p" id="p-iq-digital-media-marketing-GmbH" data-collapsible="true"  
@@ -1528,13 +1471,13 @@
                         <div class="declaration-footer-contacts">
                                 <div class="declaration-footer-contacts-title">Unternehmen</div>
                                 <div class="declaration-footer-contacts-section-wrapper">
-                                    <div class="quarter-section-1"><p>ZEIT Online GmbH<br>Buceriusstraße, Eingang Speersort 1<br>20095 Hamburg</p>
+                                    <div class="quarter-section-1"><p>Zeitverlag Gerd Bucerius GmbH &amp; Co. KG<br>Buceriusstraße, Eingang Speersort 1<br>20095 Hamburg</p>
+            <p>Persönlich haftende Gesellschafterin: Tempus Zeitverlag Geschäftsführungsgesellschaft mbH</p>
             </div>
-                                    <div class="quarter-section-2"><p>Amtsgericht Hamburg, HRB 75292<br>USt-IdNr. DE 206939910</p>
-            <p>Geschäftsführung: Christian Röpke, Enrique Tarragona</p>
+                                    <div class="quarter-section-2"><p>Amtsgericht Hamburg, HRA 91 123<br>Ust-IdNr. DE 18934245</p>
+            <p>Geschäftsführung: Nils von der Kall, Iris Ostermaier, Christian Röpke</p>
             </div>
-                                    <div class="half-section" ><p><a href="mailto:kontakt@zeit.de">kontakt@zeit.de</a></p>
-            <p>Datenschutzanfragen: siehe Betroffenenrechte und Kontakt</p>
+                                    <div class="half-section" ><p>Datenschutzanfragen: siehe Betroffenenrechte und Kontakt</p>
             </div>
                                 </div>
                                 </div>
