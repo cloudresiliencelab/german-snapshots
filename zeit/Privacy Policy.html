@@ -23,6 +23,81 @@
         </style>
 
 
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+		// language support
+		const lang = document.documentElement.lang || "de";
+		const labels = {
+			grant: lang === "en" ? "Give consent" : "Zustimmung erteilen",
+			revoke: lang === "en" ? "Withdraw consent" : "Zustimmung widerrufen",
+		};
+
+		// loads sourcepoint consent tools
+		window._sp_ = {
+			config: {
+				accountId: 692,
+				baseEndpoint: "https://consent-cdn.zeit.de",
+			},
+		};
+		const script = document.createElement("script");
+		script.src = "https://consent-cdn.zeit.de/wrapperMessagingWithoutDetection.js";
+		document.body.appendChild(script);
+
+		// function to send rejection info to app
+		window.zappiPostMessage = function (event) {
+			if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.pageHandler) {
+				// iOS
+				window.webkit.messageHandlers.pageHandler.postMessage(event);
+			} else if (window.appInterface && window.appInterface.handlePageEvent) {
+				// Andoid
+				window.appInterface.handlePageEvent(JSON.stringify(event));
+			}
+		};
+
+		// function that executes postRejectAll command
+		function rejectConsent() {
+			__tcfapi("postRejectAll", 2, function (postRejectAllResponse, success) {
+				window.zappiPostMessage({
+					type: "useractioncomplete",
+					consent: null,
+				});
+				document.cookie =
+					"consentUUID=; expires = Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=zeit.de;";
+				document.cookie =
+					"zonconsent=; expires = Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=zeit.de;";
+				console.log("postRejectAllResponse: ", postRejectAllResponse);
+				console.log("postRejectAllResponse was successful: " + success);
+				window.location.reload();
+			});
+		}
+
+		// generates consent button
+		const hasConsent = document.cookie.indexOf("consentUUID") !== -1;
+		const label = hasConsent ? labels.revoke : labels.grant;
+
+		const button = document.createElement("button");
+		button.title = label;
+		button.setAttribute("aria-label", label);
+		button.textContent = label;
+		button.style.cssText =
+			"padding: 10px 15px; margin: 0px 10px 10px 0px; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 5px; border-style: solid; font-size: 15px; font-weight: 700; color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; width: 241px; cursor: pointer;";
+		button.style.background = hasConsent ? "rgb(186, 18, 10)" : "rgb(24, 126, 67)";
+
+		button.addEventListener("click", function () {
+			if (hasConsent) {
+				rejectConsent();
+			} else {
+				window.location.href = "https://www.zeit.de";
+			}
+		});
+
+		const consentButton = document.getElementById("consentbutton");
+		while (consentButton.firstChild) {
+			consentButton.removeChild(consentButton.firstChild);
+		}
+		consentButton.appendChild(button);
+	});
+                </script>
 
     </head>
     <body class="zon">
@@ -163,7 +238,7 @@
                                 
                                 
                                     <div class="declaration-chapter-p" id="p-" data-collapsible="false" >
-                                      <div><p>Der ZEIT Verlagsgruppe gehören die nachstehenden Firmen an: Zeitverlag Gerd Bucerius GmbH &amp; Co. KG, ZEIT Online GmbH, ZEIT Digital GmbH, ZEIT Sprachen GmbH, ZEIT Akademie GmbH, Studio ZX GmbH, ZEIT Weltkunst Verlag GmbH, academics GmbH, Good Jobs GmbH und e-fellows.net GmbH &amp; Co. KG.</p>
+                                      <div><p>Der ZEIT Verlagsgruppe gehören die nachstehenden Firmen an: Zeitverlag Gerd Bucerius GmbH &amp; Co. KG, ZEIT Sprachen GmbH, ZEIT Akademie GmbH, Studio ZX GmbH, ZEIT Weltkunst Verlag GmbH, academics GmbH, Good Jobs GmbH und e-fellows.net GmbH &amp; Co. KG.</p>
                                     <p>Angeboten werden z.B. Abonnements zu verschiedenen journalistischen Inhalten, Reisen, Produkte, Seminare, Job-Portale, Veranstaltungen und Vorteilsangebote für Abonnenten.</p>
                                     </div>
                                         
