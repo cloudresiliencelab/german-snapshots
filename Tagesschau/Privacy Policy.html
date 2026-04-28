@@ -3727,9 +3727,20 @@
                              }' data-v-type="CookieCheckbox"></span>
                         </fieldset>
                         <fieldset class="thirdparty-settings">
-                            <legend class="hidden">Auswahl externer Anbieter</legend>
-                            <label class="form-label">Externe Anbieter: <span>&nbsp;Inhalte zeigen von</span></label>
-                            <ul class="settings__list-wrapper">
+                            <legend class="hidden">Externe Inhalte anzeigen von</legend>
+                            <p class="thirdparty-settings__label thirdparty-settings__label--strong columns twelve">Inhalte zeigen von:</p>
+                            <div class="columns twelve settings__list-wrapper">
+                                <div class="v-instance" data-v='
+                                {
+                                 "service_name": "ard-core",
+                                 "embed_type": "opt-out",
+                                 "display_type": "checkbox",
+                                 "service_label": "ARD Mediathek/ARD Sounds",
+                                 "service_long_label": ""
+                                }' data-v-type="CookieCheckbox"></div>
+                            </div>
+                            <p class="thirdparty-settings__label columns twelve">Externe Anbieter:</p>
+                            <ul class="settings__list-wrapper columns twelve">
                                 <li>
                                     <span class="v-instance" data-v='
                                         {
@@ -3801,6 +3812,17 @@
                                             "embed_type": "opt-out",
                                             "display_type": "checkbox",
                                             "service_label": "Datawrapper",
+                                            "service_long_label": ""
+                                        }' data-v-type="CookieCheckbox">
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="v-instance" data-v='
+                                        {
+                                            "service_name": "bluesky",
+                                            "embed_type": "opt-in",
+                                            "display_type": "checkbox",
+                                            "service_label": "Bluesky",
                                             "service_long_label": ""
                                         }' data-v-type="CookieCheckbox">
                                     </span>
