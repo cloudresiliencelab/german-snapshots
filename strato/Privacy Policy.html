@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de" data-language="ger" data-theme="poppins">
     <head>
-        <!-- BUILD: 3b3d6ec439255861cbf012683950226f2ad1dce5 -->
+        <!-- BUILD: 3f62af291d0d5c45e356ff59356cc208513462a1 -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1">
         <title></title>
@@ -12,7 +12,7 @@
         
         
             
-            <link rel="stylesheet" href="/_assets/main.3536e41f.css"></link>
+            <link rel="stylesheet" href="/_assets/main.202442fc.css"></link>
             <link rel="modulepreload" href="/_assets/setCookie.2e7644a3.js"></link>
         
         
@@ -86,16 +86,35 @@
         
             <script type="duringBusinessHours" data-type="text/javascript" charset="utf-8">
             (function (g, e, n, es, ys) {
-                g['_genesysJs'] = e;
-                g[e] = g[e] || function ()
-            {       (g[e].q = g[e].q || []).push(arguments)     }
-            ;
-                g[e].t = 1 * new Date();
-                g[e].c = es;
-                ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
-            })(window, 'Genesys', 'https://apps.mypurecloud.de/genesys-bootstrap/genesys.min.js',
-            {     environment: 'prod-euc1',     deploymentId: 'a4ef7022-cc7f-44eb-8f6b-5337d73935ce'   }
-            );
+              g['_genesysJs'] = e;
+              g[e] = g[e] || function () {
+                (g[e].q = g[e].q || []).push(arguments)
+              };
+              g[e].t = 1 * new Date();
+              g[e].c = es;
+              ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
+            })(window, 'Genesys', 'https://apps.mypurecloud.de/genesys-bootstrap/genesys.min.js', {
+              environment: 'prod-euc1',
+              deploymentId: 'a4ef7022-cc7f-44eb-8f6b-5337d73935ce'
+            });
+
+            Genesys("subscribe", "Conversations.ready", function(){});
+            Genesys("subscribe", "Conversations.opened", function(){});
+            Genesys("subscribe", "Conversations.started", function(){});
+
+            function updateCustomAttribute() {
+              var MarketId = "DE";
+
+              Genesys("command", "Database.set", {
+                messaging: {
+                  customAttributes: {
+                    "context.marketId": MarketId
+                  }
+                }
+              });
+            }
+
+            setInterval(updateCustomAttribute, 5000);
             </script>
         
 
