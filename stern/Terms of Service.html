@@ -4,6 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>"use strict";(()=>{var s=[];window.website={isReady(e){if(typeof e!="function")throw new TypeError("website.isReady: callback must be a function.");s.push(e)},_q:s};})();
+//# sourceMappingURL=/public/inline-HGOHPGZI.js.map
+</script>
   <title>AGB | STERN.de</title>
 <script type="text/javascript">
   // Duration in milliseconds to wait while the Kameleoon application file is loaded
@@ -74,14 +77,14 @@
 <script type="text/javascript" src="https://jpi6gyfn8p.kameleoon.io/engine.js" async="true" fetchpriority="high"></script>
 
   <link rel="preload" as="font" href="https://www.stern.de/public/SternVariable-4OGB3BYX.woff2" type="font/woff2" crossorigin>
-  <link rel="preload" as="font" href="https://www.stern.de/public/iconfont-QZ6PAWD7.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="font" href="https://www.stern.de/public/iconfont-VCXPXAQN.woff2" type="font/woff2" crossorigin>
   <link rel="icon" type="image/x-icon" href="https://www.stern.de/public/favicon-FMX3RXE2.ico">
   <link rel="icon" type="image/svg+xml" href="https://www.stern.de/public/favicon-U7MYFH7J.svg">
   <link rel="manifest" href="https://www.stern.de/public/manifest-O2IH675K.json" crossorigin="use-credentials">
-  <style>@font-face{font-display:swap;font-family:stern-variable;font-stretch:80% 100%;font-style:normal;font-weight:300 800;src:url("/public/SternVariable-4OGB3BYX.woff2") format("woff2")}@font-face{font-display:swap;font-family:stern-variable;font-stretch:80% 100%;font-style:italic;font-weight:300 800;src:url("/public/SternItalicVariable-TZUDG6NG.woff2") format("woff2")}@font-face{font-display:block;font-family:iconfont;font-style:normal;font-weight:400;src:url("/public/iconfont-QZ6PAWD7.woff2") format("woff2")}
-/*# sourceMappingURL=/public/inline-E7RITZRP.css.map */
+  <style>@font-face{font-display:swap;font-family:stern-variable;font-stretch:80% 100%;font-style:normal;font-weight:300 800;src:url("/public/SternVariable-4OGB3BYX.woff2") format("woff2")}@font-face{font-display:swap;font-family:stern-variable;font-stretch:80% 100%;font-style:italic;font-weight:300 800;src:url("/public/SternItalicVariable-TZUDG6NG.woff2") format("woff2")}@font-face{font-display:block;font-family:iconfont;font-style:normal;font-weight:400;src:url("/public/iconfont-VCXPXAQN.woff2") format("woff2")}
+/*# sourceMappingURL=/public/inline-ONX72DUP.css.map */
 </style>
-  <link rel="stylesheet" href="https://www.stern.de/public/main-Q2KWYVUU.css">
+  <link rel="stylesheet" href="https://www.stern.de/public/main-TSXB5AA3.css">
 
 
   
@@ -112,7 +115,7 @@
   <meta name="last-modified" content="2025-07-15T10:26:43+02:00">
 
 <meta name="theme-color" content="#1f1f1f" media="(prefers-color-scheme: dark)">
-<meta name="buildDate" content="2026-07-24T12:59:30+00:00">
+<meta name="buildDate" content="2026-07-31T12:00:00+00:00">
 <meta property="og:site_name" content="stern.de">
 <meta property="og:locale" content="de_DE">
 
@@ -1735,19 +1738,30 @@
   <div class="article__body">
 <div class="feature-bar" data-testid="feature-bar">
 
+    <ws-tooltip
+      data-headline="Allgemeine Geschäftsbedingungen" data-id="4541846" data-tooltip-name="google_preferred_source" data-type="article" delay="400" hidden position="top right" target="[data-preferred-source]" usage="preferred-source"
+    >
+        <p slot="title" class="typo-headline-base"><i>stern</i> auf Google hinzufügen</p>
+        <p slot="content" class="typo-body-sm">Legen Sie <i>stern</i> als Ihre bevorzugte Quelle fest.</p>
+    </ws-tooltip>
+
 
   <div class="feature-bar__items">
 
     <div class="feature-bar__item">
-      <ws-copylink data-gtm-event-linkcopy>
-        <button class="feature-bar__button feature-bar__button--no-text" data-gtm-event-linkcopy type="button" title="Kopiere den aktuellen Link">
-          <i class="icon-link" data-gtm-event-linkcopy aria-hidden="true"></i>
-          <span class="u-visually-hidden">
-            Kopiere den aktuellen Link
-          </span>
-        </button>
-      </ws-copylink>
-      <ws-paywallcontrol class="ws-paywallcontrol">
+      <a
+        href="https://www.google.com/preferences/source?q=stern.de"
+        target="_blank"
+        class="feature-bar__button feature-bar__button--no-text"
+        title="stern.de als bevorzugte Quelle festlegen"
+        data-preferred-source
+        data-gtm-event-googlepreferredsource>
+        <i class="icon-preferred-source" aria-hidden="true"></i>
+        <span class="u-visually-hidden">
+          stern.de als bevorzugte Quelle festlegen
+        </span>
+      </a>
+      <ws-paywallcontrol class="ws-paywallcontrol" target-dialog="#bookmark-dialog">
         <button class="feature-bar__button feature-bar__button--no-text ws-open-dialog" type="button">
           <i class="icon-bookmark" aria-hidden="true"></i>
           
@@ -2124,7 +2138,7 @@
 
 
 
-      <ws-paywallcontrol class="teaser-footer__bookmark">
+      <ws-paywallcontrol class="teaser-footer__bookmark" target-dialog="#bookmark-dialog">
         <button class="ws-open-dialog" data-content-id="31575174" data-brand-identifier="stern" data-headline="Zwölfjähriger Künstler begeisterte erst William und Kate – und jetzt auch Nike" data-tracking-paid-category="free" data-target-type="article" data-teaser-type="text-card" data-tracking-active type="button">
           <i class="icon-bookmark" aria-hidden="true"></i>
           <span class="u-visually-hidden">Zur Merkliste hinzufügen</span>
@@ -2160,7 +2174,7 @@
 
 
 
-      <ws-paywallcontrol class="teaser-footer__bookmark">
+      <ws-paywallcontrol class="teaser-footer__bookmark" target-dialog="#bookmark-dialog">
         <button class="ws-open-dialog" data-content-id="30548160" data-brand-identifier="stern" data-headline="Spotify kündigt neue Nutzungsbedingungen an – steht ein Preisanstieg bevor?" data-tracking-paid-category="free" data-target-type="article" data-teaser-type="text-card" data-tracking-active type="button">
           <i class="icon-bookmark" aria-hidden="true"></i>
           <span class="u-visually-hidden">Zur Merkliste hinzufügen</span>
@@ -2196,7 +2210,7 @@
 
 
 
-      <ws-paywallcontrol class="teaser-footer__bookmark">
+      <ws-paywallcontrol class="teaser-footer__bookmark" target-dialog="#bookmark-dialog">
         <button class="ws-open-dialog" data-content-id="30528444" data-brand-identifier="stern" data-headline="Whatsapp hat neue Nutzungsbedingungen – das umstrittene Update im Überblick" data-tracking-paid-category="free" data-target-type="article" data-teaser-type="text-card" data-tracking-active type="button">
           <i class="icon-bookmark" aria-hidden="true"></i>
           <span class="u-visually-hidden">Zur Merkliste hinzufügen</span>
@@ -3207,7 +3221,7 @@
 
 
 
-      <ws-paywallcontrol class="teaser-footer__bookmark">
+      <ws-paywallcontrol class="teaser-footer__bookmark" target-dialog="#bookmark-dialog">
         <button class="ws-open-dialog" data-content-id="9561208" data-brand-identifier="stern" data-headline="Viele wollen weg von Whatsapp - das muss man zur Hype-Alternative Signal wissen" data-tracking-paid-category="free" data-target-type="article" data-teaser-type="standard-s" data-tracking-active type="button">
           <i class="icon-bookmark" aria-hidden="true"></i>
           <span class="u-visually-hidden">Zur Merkliste hinzufügen</span>
@@ -3257,7 +3271,7 @@
 
 
 
-      <ws-paywallcontrol class="teaser-footer__bookmark">
+      <ws-paywallcontrol class="teaser-footer__bookmark" target-dialog="#bookmark-dialog">
         <button class="ws-open-dialog" data-content-id="9029582" data-brand-identifier="stern" data-headline="Böllerverbot und Hartz-IV-Erhöhung: Das ändert sich im Dezember 2019" data-tracking-paid-category="free" data-target-type="article" data-teaser-type="standard-s" data-tracking-active type="button">
           <i class="icon-bookmark" aria-hidden="true"></i>
           <span class="u-visually-hidden">Zur Merkliste hinzufügen</span>
@@ -3307,7 +3321,7 @@
 
 
 
-      <ws-paywallcontrol class="teaser-footer__bookmark">
+      <ws-paywallcontrol class="teaser-footer__bookmark" target-dialog="#bookmark-dialog">
         <button class="ws-open-dialog" data-content-id="8397312" data-brand-identifier="stern" data-headline="Mindestalter hochgesetzt: Spotify jetzt erst ab 16 Jahren" data-tracking-paid-category="free" data-target-type="article" data-teaser-type="standard-s" data-tracking-active type="button">
           <i class="icon-bookmark" aria-hidden="true"></i>
           <span class="u-visually-hidden">Zur Merkliste hinzufügen</span>
@@ -3357,7 +3371,7 @@
 
 
 
-      <ws-paywallcontrol class="teaser-footer__bookmark">
+      <ws-paywallcontrol class="teaser-footer__bookmark" target-dialog="#bookmark-dialog">
         <button class="ws-open-dialog" data-content-id="7961856" data-brand-identifier="stern" data-headline="Facebooks peinliches Geständnis: &quot;Wir haben die Nutzungsbedingungen nicht gelesen&quot;" data-tracking-paid-category="free" data-target-type="article" data-teaser-type="standard-s" data-tracking-active type="button">
           <i class="icon-bookmark" aria-hidden="true"></i>
           <span class="u-visually-hidden">Zur Merkliste hinzufügen</span>
@@ -3407,7 +3421,7 @@
 
 
 
-      <ws-paywallcontrol class="teaser-footer__bookmark">
+      <ws-paywallcontrol class="teaser-footer__bookmark" target-dialog="#bookmark-dialog">
         <button class="ws-open-dialog" data-content-id="7785114" data-brand-identifier="stern" data-headline="Ich habe die Facebook-AGB gelesen - Protokoll einer beängstigenden (und langen) Lektüre" data-tracking-paid-category="free" data-target-type="article" data-teaser-type="standard-s" data-tracking-active type="button">
           <i class="icon-bookmark" aria-hidden="true"></i>
           <span class="u-visually-hidden">Zur Merkliste hinzufügen</span>
@@ -3457,7 +3471,7 @@
 
 
 
-      <ws-paywallcontrol class="teaser-footer__bookmark">
+      <ws-paywallcontrol class="teaser-footer__bookmark" target-dialog="#bookmark-dialog">
         <button class="ws-open-dialog" data-content-id="7764454" data-brand-identifier="stern" data-headline="Sarah Kuttner auf Facebook gesperrt - wegen dieses Nacktfotos" data-tracking-paid-category="free" data-target-type="article" data-teaser-type="standard-s" data-tracking-active type="button">
           <i class="icon-bookmark" aria-hidden="true"></i>
           <span class="u-visually-hidden">Zur Merkliste hinzufügen</span>
@@ -4110,7 +4124,35 @@
 </ws-dialog>
 
 
-    <ws-adscript aria-hidden="true" hidden name="bottom" live-url="https://www.stern.de/stern.de/MoltenBundle.bottom.js" preview-url="https://adctrl.emsmobile.de/molten/preview/stern/MoltenBundle.bottom.js"></ws-adscript><ws-user ></ws-user>
+<ws-dialog>
+  
+  <dialog class="dialog" id="bookmark-dialog">
+    <button type="button" class="dialog__close-button">
+      <span class="u-visually-hidden">Dialog schließen</span>
+      <i class="icon-close" aria-hidden="true"></i>
+    </button>
+    
+<ws-paywall contentid="4541846" contenturl="https://www.stern.de/agb-4541846.html" dialog="true" headline="Allgemeine Geschäftsbedingungen" loggedin="false" trackingtype="Artikel" zone="_noad" type="article" envBaseUrl="https://www.stern.de" skip-tracking>
+  <div class="paid-barrier paid-barrier--loading" id="stern-bookmark-article-dialog" data-testid="paywall-container" data-zephr="stern-regwall">
+    <div>
+      <p class="paid-barrier__headline">Jetzt Artikel merken!</p>
+      <p class="paid-barrier__description">Mit <i>stern</i>-Account Artikel merken, um sie später zu lesen und wiederzufinden.</p>
+    </div>
+    <ws-link class="button button--primary-highlight paid-barrier__button" href="https://www.stern.de/p-user/login?wdycf=%s" data-testid="paywall-offer-button">
+      Jetzt registrieren<i class="icon-caret-right paid-barrier__button-icon" aria-hidden="true"></i>
+    </ws-link>
+    <p class="paid-barrier__login">
+      <span>Bereits registriert?</span>
+      <ws-link class="paid-barrier__login-link" href="https://www.stern.de/p-user/login?wdycf=%s" data-testid="paywall-login-link">Hier anmelden</ws-link>
+    </p>
+  </div>
+</ws-paywall>
+
+  </dialog>
+</ws-dialog>
+
+
+    <ws-adscript aria-hidden="true" hidden live-url="https://www.stern.de/stern.de/MoltenBundle.bottom.js" name="bottom" preview-url="https://adctrl.emsmobile.de/molten/preview/stern/MoltenBundle.bottom.js"></ws-adscript><ws-user ></ws-user>
 
 
 
@@ -4157,8 +4199,8 @@
 
 
 
-  <script src="https://www.stern.de/public/main-ALZ3ZFSW.js"></script>
-  <script src="https://www.stern.de/scoupofcarob.js" async></script>
+  <script src="https://www.stern.de/public/main-RNOHXCBT.js"></script>
+  <script src="https://www.stern.de/reptilonindeed.js" async></script>
   <script type="application/ld+json">[{"description":"Hier finden Sie die Allgemeinen Geschäftsbedingungen der G+J Medien GmbH.","image":[{"url":"https://image.stern.de/6681672/t/ZT/v10/w1440/r1/-/video-fallback-image.png","width":"1440","height":"1440","@type":"ImageObject"},{"url":"https://image.stern.de/6681672/t/hC/v10/w1440/r1.3333/-/video-fallback-image.png","width":"1440","height":"1080","@type":"ImageObject"},{"url":"https://image.stern.de/6681672/t/su/v10/w1440/r1.7778/-/video-fallback-image.png","width":"1440","height":"810","@type":"ImageObject"}],"mainEntityOfPage":{"@id":"https://www.stern.de/agb-4541846.html","@type":"WebPage"},"headline":"AGB","datePublished":"2021-06-11T17:05:00+02:00","dateModified":"2025-07-15T10:26:43+02:00","author":{"name":"STERN.de","logo":{"url":"https://image.stern.de/35508036/t/T0/v3/w240/r0/-/stern-logo-neu-schema-org-2025.png","width":"240","height":"324","@type":"ImageObject"},"@type":"Organization"},"publisher":{"name":"STERN.de","logo":{"url":"https://image.stern.de/35508036/t/T0/v3/w240/r0/-/stern-logo-neu-schema-org-2025.png","width":"240","height":"324","@type":"ImageObject"},"@type":"Organization"},"speakable":{"xpath":["/html/head/title","/html/head/meta[@name='description']/@content"],"@type":"SpeakableSpecification"},"@context":"http://schema.org","@type":"NewsArticle"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"position":1,"item":{"name":"AGB","@id":"https://www.stern.de/agb-4541846.html","@type":"WebPage"},"@type":"ListItem"}]}]</script>
 
 
