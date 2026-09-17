@@ -169,8 +169,44 @@
 
 		
 		
-			<script>(function(){window.kameleoonQueue = window.kameleoonQueue || [];window.kameleoonIframeURL="https://www.kleinanzeigen.de/bffstatic/ka-kameleoon/ka-kameleoon-iframe.html";var f=document.createElement("a");window.kameleoonLightIframe=false;f.href=window.kameleoonIframeURL;window.kameleoonIframeOrigin=f.origin||(f.protocol+"//"+f.hostname);if(location.href.indexOf(window.kameleoonIframeOrigin)!=0){window.kameleoonLightIframe=true;var g=function(event){if(window.kameleoonIframeOrigin==event.origin&&event.data.slice&&event.data.slice(0,9)=="Kameleoon"){window.removeEventListener("message",g);window.kameleoonExternalIFrameLoaded=true;if(window.Kameleoon){eval(event.data);Kameleoon.Analyst.load()}else{window.kameleoonExternalIFrameLoadedData=event.data}}};if(window.addEventListener){window.addEventListener("message",g,false)}var h=document.createElement("iframe");h.src=kameleoonIframeURL;h.id="kameleoonExternalIframe";h.style="float: left !important; opacity: 0.0 !important; width: 0px !important; height: 0px !important;";document.head.appendChild(h)};})();</script>
-			<script src="//n1ux7flhug.kameleoon.io/engine.js" async fetchpriority="high"></script>
+			<script>
+	window.kameleoonIframeURL = 'https://www.kleinanzeigen.de/bffstatic/ka-kameleoon/ka-kameleoon-iframe.html';
+	window.kameleoonLightIframe = false;
+	var kameleoonIframeOriginElement = document.createElement('a');
+	kameleoonIframeOriginElement.href = kameleoonIframeURL;
+	window.kameleoonIframeOrigin = kameleoonIframeOriginElement.origin || kameleoonIframeOriginElement.protocol + '//' + kameleoonIframeOriginElement.hostname;
+	if (location.href.indexOf(window.kameleoonIframeOrigin) != 0) {
+		window.kameleoonLightIframe = true;
+		var kameleoonProcessMessageEvent = function (event) {
+			if (
+				window.kameleoonIframeOrigin == event.origin &&
+				event.data.slice &&
+				event.data.slice(0, 9) == 'Kameleoon'
+			) {
+				window.removeEventListener('message', kameleoonProcessMessageEvent);
+				window.kameleoonExternalIFrameLoaded = true;
+				if (window.Kameleoon) {
+					Kameleoon.Utils.runProtectedScript(event.data);
+					Kameleoon.Analyst.load();
+				} else {
+					window.kameleoonExternalIFrameLoadedData = event.data;
+				}
+			}
+		};
+		if (window.addEventListener) {
+			window.addEventListener('message', kameleoonProcessMessageEvent, false);
+		}
+		var iframeNode = document.createElement('iframe');
+		iframeNode.src = kameleoonIframeURL;
+		iframeNode.id = 'kameleoonExternalIframe';
+		iframeNode.style = 'float: left !important; opacity: 0.0 !important; width: 0px !important; height: 0px !important;';
+		document.head.appendChild(iframeNode);
+	}
+
+	window.kameleoonQueue = window.kameleoonQueue || [];
+</script>
+<script src="//n1ux7flhug.kameleoon.io/engine.js" async="true" fetchpriority="high"></script>
+
 		
 	</head>
 	<body>
