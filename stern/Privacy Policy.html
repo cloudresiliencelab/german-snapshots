@@ -78,6 +78,7 @@
 
   <link rel="preload" as="font" href="https://www.stern.de/public/SternVariable-4OGB3BYX.woff2" type="font/woff2" crossorigin>
   <link rel="preload" as="font" href="https://www.stern.de/public/iconfont-ETIJXFPC.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="script" href="https://baseendpoint.stern.de/unified/wrapperMessagingWithoutDetection.js">
   <link rel="icon" type="image/x-icon" href="https://www.stern.de/public/favicon-FMX3RXE2.ico">
   <link rel="icon" type="image/svg+xml" href="https://www.stern.de/public/favicon-U7MYFH7J.svg">
   <link rel="manifest" href="https://www.stern.de/public/manifest-O2IH675K.json" crossorigin="use-credentials">
@@ -115,7 +116,7 @@
   <meta name="last-modified" content="2026-06-09T10:40:57+02:00">
 
 <meta name="theme-color" content="#1f1f1f" media="(prefers-color-scheme: dark)">
-<meta name="buildDate" content="2026-10-13T12:00:44+00:00">
+<meta name="buildDate" content="2026-10-20T08:32:25+00:00">
 <meta property="og:site_name" content="stern.de">
 <meta property="og:locale" content="de_DE">
 
@@ -142,7 +143,7 @@
 
 <meta name="apple-itunes-app" content="app-id=376155932, app-argument=https://www.stern.de/datenschutzbestimmungen-4541848.html">
 
-  <script defer src="https://www.stern.de/public/head-6PNNHZPP.js"></script>
+  <script defer src="https://www.stern.de/public/head-W63VKCCA.js"></script>
 </head>
 
 <body >
@@ -1896,19 +1897,19 @@
       <span class="u-visually-hidden">Dialog schließen</span>
       <i class="icon-close" aria-hidden="true"></i>
     </button>
-        <div class="regwall-barrier">
+        <div class="regwall-barrier" data-regwall-source="regwall_logora">
       <i class="regwall-barrier__icon icon-conversation" aria-hidden="true"></i>
       <p class="regwall-barrier__headline">Debattieren Sie mit</p>
       <p class="regwall-barrier__benefits">Erstellen Sie ein Konto, um aktiv an Debatten teilzunehmen und diese zu kommentieren.</p>
       <ws-link class="regwall-barrier__button"
-        href="https://www.stern.de/p-user/login?wdycf=%s&source=regwall_logora" data-testid="logora-register-link">
+        href="https://www.stern.de/p-user/login?wdycf=%s&source=regwall_logora" data-regwall-link data-testid="logora-register-link">
         Kostenlos registrieren
         <i class="regwall-barrier__button-icon icon-arrow-right"></i>
       </ws-link>
       <p class="regwall-barrier__login">
         Bereits registriert?
         <ws-link class="regwall-barrier__login-link"
-          href="https://www.stern.de/p-user/login?wdycf=%s&source=regwall_logora" data-testid="logora-login-link">
+          href="https://www.stern.de/p-user/login?wdycf=%s&source=regwall_logora" data-regwall-link data-testid="logora-login-link">
           Anmelden
         </ws-link>
       </p>
@@ -5887,7 +5888,7 @@
 
 
   <ws-gtm container-id="GTM-K47MJWS9" aria-hidden="true" hidden>
-    <script type="application/json">{"content":{"ad_keywords":"stern,onecore,Internetauftritt,no_guarantee,ct_article","ad_zone":"_noad","editorial_sources":"not_set","experiment_id":"not_set","first_headline":"4541848:Datenschutzbestimmungen","first_publication_date":"2015-03-11","headline":"Datenschutzbestimmungen","hidden_sources":[["STERN","stern-online"]],"id":"4541848","ivw_code":"820Angebotsinformation","last_update_date":"2026-06-09T10:40:57+02:00","main_section":"not_set","molten_bundle_site_type":"not_set","special_id":"not_set","special_kicker":"not_set","sub_section_1":"not_set","sub_section_2":"not_set","sub_section_3":"not_set","sub_type":"not_set","tags":"not_set","type":"Artikel"},"gallery":{"current_picture":"not_set","number_of_pictures":"not_set"},"login":{"distribution_channel":"not_set","hashed_user_id":"not_set","login_status":false,"product_content_category":"not_set","product_content_mode":"full","product_content_status":"free","product_user_status":"not_set","registration_status":"not_set"},"tech":{"app_version":"not_set","delivery_channel":"not_set","development_version_id":"v106.13.0","device_orientation":"not_set"}}</script>
+    <script type="application/json">{"content":{"ad_keywords":"stern,onecore,Internetauftritt,no_guarantee,ct_article","ad_zone":"_noad","editorial_sources":"not_set","experiment_id":"not_set","first_headline":"4541848:Datenschutzbestimmungen","first_publication_date":"2015-03-11","headline":"Datenschutzbestimmungen","hidden_sources":[["STERN","stern-online"]],"id":"4541848","ivw_code":"820Angebotsinformation","last_update_date":"2026-06-09T10:40:57+02:00","main_section":"not_set","molten_bundle_site_type":"not_set","special_id":"not_set","special_kicker":"not_set","sub_section_1":"not_set","sub_section_2":"not_set","sub_section_3":"not_set","sub_type":"not_set","tags":"not_set","type":"Artikel"},"gallery":{"current_picture":"not_set","number_of_pictures":"not_set"},"login":{"distribution_channel":"not_set","hashed_user_id":"not_set","login_status":false,"product_content_category":"not_set","product_content_mode":"full","product_content_status":"free","product_user_status":"not_set","registration_status":"not_set"},"tech":{"app_version":"not_set","delivery_channel":"not_set","development_version_id":"v106.14.0","device_orientation":"not_set"}}</script>
   </ws-gtm>
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K47MJWS9"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -5940,12 +5941,14 @@
   </ws-soft-primer>
 
 
-  <script defer src="https://www.stern.de/public/body-MKVMNYMJ.js"></script>
-  <script src="https://www.stern.de/hammeloflatex.js" async></script>
+  <script defer src="https://www.stern.de/public/body-MFJVX2VU.js"></script>
+  <script src="https://www.stern.de/reptilofdelicious.js" async></script>
   <script type="application/ld+json">[{"description":"Datenschutz-Hinweise der Webseiten des stern","image":[{"url":"https://image.stern.de/6681672/t/ZT/v10/w1440/r1/-/video-fallback-image.png","width":"1440","height":"1440","@type":"ImageObject"},{"url":"https://image.stern.de/6681672/t/hC/v10/w1440/r1.3333/-/video-fallback-image.png","width":"1440","height":"1080","@type":"ImageObject"},{"url":"https://image.stern.de/6681672/t/su/v10/w1440/r1.7778/-/video-fallback-image.png","width":"1440","height":"810","@type":"ImageObject"}],"mainEntityOfPage":{"@id":"https://www.stern.de/datenschutzbestimmungen-4541848.html","@type":"WebPage"},"headline":"Datenschutzbestimmungen","datePublished":"2018-05-25T15:45:17+02:00","dateModified":"2026-06-09T10:40:57+02:00","author":{"name":"STERN.de","logo":{"url":"https://image.stern.de/35508036/t/T0/v3/w240/r0/-/stern-logo-neu-schema-org-2025.png","width":"240","height":"324","@type":"ImageObject"},"@type":"Organization"},"publisher":{"name":"STERN.de","logo":{"url":"https://image.stern.de/35508036/t/T0/v3/w240/r0/-/stern-logo-neu-schema-org-2025.png","width":"240","height":"324","@type":"ImageObject"},"@type":"Organization"},"speakable":{"xpath":["/html/head/title","/html/head/meta[@name='description']/@content"],"@type":"SpeakableSpecification"},"@context":"http://schema.org","@type":"NewsArticle"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"position":1,"item":{"name":"Datenschutzbestimmungen","@id":"https://www.stern.de/datenschutzbestimmungen-4541848.html","@type":"WebPage"},"@type":"ListItem"}]}]</script>
 
+    <script src="https://www.stern.de/audev/public/identity-snippet/v1.0.7/snippet.CY4F7DCh.js" defer></script>
+
   
-  <script src="https://www.stern.de/audev/public/widget/v1.5.0/teaser-widget.BtuW-PN4.js"></script>
+  <script src="https://www.stern.de/audev/public/widget/v1.5.0/teaser-widget.BtuW-PN4.js" defer></script>
 
 
   <ws-push sdk="https://static.cleverpush.com/channel/loader/5JfME9rKQ2JGtdjx5.js" worker="/service-worker.js" aria-hidden="true" hidden></ws-push>
